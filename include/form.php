@@ -27,8 +27,8 @@ require 'phpmailer/src/SMTP.php';
 $toemails = array();
 
 $toemails[] = array(
-				'email' => 'noah@ekata.co.in', // Your Email Address
-				'name' => 'Noah' // Your Name
+				'email' => 'anvrnazr@gmail.com', // Your Email Address
+				'name' => 'Anvar' // Your Name
 			);
 
 
@@ -57,7 +57,14 @@ $recaptcha_secret = ''; // Your reCaptcha Secret
 $mail = new PHPMailer();
 
 /* Add your SMTP Codes after this Line */
-
+$mail->IsSMTP(); 
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+$mail->SMTPDebug = 4;                          // telling the class to use SMTP
+$mail->SMTPAuth   = true;                  // enable SMTP authentication
+$mail->Host       = "smtp.gmail.com"; 		// set the SMTP server
+$mail->Port       = 465;                    // set the SMTP port
+$mail->Username   = "ekatasmtp@gmail.com"; // SMTP account username
+$mail->Password   = "ekatapwdsmtp19";        // SMTP account password
 
 // End of SMTP
 
